@@ -90,7 +90,7 @@ def construct_society(question: str) -> RolePlaying:
     # Configure toolkits
     tools = [
         *BrowserToolkit(
-            headless=False,  # Set to True for headless mode (e.g., on remote servers)
+            headless=True,  # Set to True for headless mode (e.g., on remote servers)
             web_agent_model=models["browsing"],
             planning_agent_model=models["planning"],
         ).get_tools(),
@@ -129,18 +129,17 @@ def construct_society(question: str) -> RolePlaying:
 
 
 def main():
-    r"""Main function to run the OWL system with an example question."""
-    # Default research question
-    default_task = "Navigate to Amazon.com and identify one product that is attractive to coders. Please provide me with the product name and price. No need to verify your answer."
-
-    # Override default task if command line argument is provided
+    """Main function to run the OWL system with a single example question."""
+    default_task = "帮我看下亚马逊最便宜的汽车价格 并给我个链接"
+    import sys
+    # 支持命令行参数单轮运行
     task = sys.argv[1] if len(sys.argv) > 1 else default_task
-
-    # Construct and run the society
+    # 强制在每次任务后加“请用中文回答”
+    if not task.strip().endswith("请用中文回答"):
+        task = task.strip() + "，请用中文回答"
     society = construct_society(task)
+    from owl.utils import run_society
     answer, chat_history, token_count = run_society(society)
-
-    # Output the result
     print(f"\033[94mAnswer: {answer}\033[0m")
 
 

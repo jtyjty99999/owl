@@ -1,0 +1,6 @@
+Current Weather Conditions in Beijing:
+- Temperature: 21°C
+- RealFeel Shade: 19°C
+- Wind: North at 24 km/h
+- Wind Gusts: 24 km/h
+- Air Quality: Poor
