@@ -1,0 +1,13 @@
+{
+  "name": "web_launcher",
+  "version": "1.0.0",
+  "description": "Web UI to launch run.py",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.18.1"
+  }
+}

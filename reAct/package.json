@@ -1,0 +1,25 @@
+{
+  "name": "react-agent-example",
+  "version": "1.0.0",
+  "description": "A simple ReAct agent implementation in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "agent",
+    "ai",
+    "reasoning",
+    "acting"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^16.5.0",
+    "openai": "^4.94.0"
+  },
+  "type": "module"
+}
